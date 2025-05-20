@@ -1,103 +1,69 @@
-import Image from "next/image";
+'use client';
+
+import { Instagram, Youtube, Twitter, Mail, Music, Link2 } from 'lucide-react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const links = [
+    { icon: <Link2 size={18} />, label: 'My Website', url: 'https://sanzyretro.com' },
+    { icon: <Youtube size={18} />, label: 'YouTube Channel', url: 'https://youtube.com/@sanzy' },
+    { icon: <Instagram size={18} />, label: 'Instagram', url: 'https://instagram.com/sanzy' },
+    { icon: <Music size={18} />, label: 'Spotify Tracks', url: 'https://open.spotify.com/user/sanzy' },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+  return (
+    <main className="min-h-screen bg-[#ffe8d6] text-[#222] flex items-center justify-center px-4 relative overflow-hidden font-sans">
+
+      {/* Background block colors */}
+      <div className="absolute w-40 h-40 bg-[#ffafcc] rotate-45 top-10 left-[-40px] rounded-lg shadow-xl" />
+      <div className="absolute w-24 h-24 bg-[#bde0fe] bottom-10 right-[-30px] rounded-md shadow-lg" />
+      <div className="absolute w-56 h-12 bg-[#cdb4db] rotate-[-12deg] top-[60%] left-[30%] blur-sm" />
+
+      <div className="relative z-10 w-full max-w-md bg-white border-[4px] border-[#222] rounded-2xl p-8 shadow-[8px_8px_0px_#222]">
+
+        {/* Avatar */}
+        <div className="w-24 h-24 rounded-full mx-auto overflow-hidden border-[4px] border-[#222] shadow-md mb-4">
+          <img
+            src="https://i.pravatar.cc/150?img=21"
+            alt="Sanzy"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Nama dan Bio */}
+        <div className="text-center">
+          <h1 className="text-3xl font-extrabold tracking-tight text-[#ff006e]">
+            NamaAnda
+          </h1>
+          <p className="mt-1 text-sm text-[#444] italic">Neo-nostalgic content creator 🎮✨</p>
+        </div>
+
+        {/* Link Buttons */}
+        <div className="mt-6 space-y-4">
+          {links.map(({ icon, label, url }, i) => (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 justify-center w-full py-3 rounded-xl border-[3px] border-[#222] bg-[#fefae0] hover:bg-[#ffd6a5] transition duration-200 font-bold text-[#222] shadow-[4px_4px_0px_#222]"
+            >
+              {icon} {label}
+            </a>
+          ))}
+        </div>
+
+        {/* Socials */}
+        <div className="flex justify-center gap-5 mt-6">
+          <a href="https://twitter.com/sanzy" target="_blank" className="hover:scale-110 transition">
+            <Twitter size={22} className="text-[#8338ec]" />
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="mailto:sanzy@email.com" target="_blank" className="hover:scale-110 transition">
+            <Mail size={22} className="text-[#ff006e]" />
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <p className="mt-6 text-center text-xs text-[#777]">© 2025 Sanzystore. Stay groovy!</p>
+      </div>
+    </main>
   );
 }
