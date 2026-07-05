@@ -4,10 +4,10 @@ import "./globals.css";
 const bungee = Bungee({ subsets: ["latin"], variable: "--font-bungee", weight: "400" });
 const spacemono = Space_Mono({ subsets: ["latin"], variable: "--font-spacemono", weight: ["400", "700"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"MusicGroup","name":"DISKO PANDA","genre":"Funk Disco","url":"https://linkinbio-disko.vercel.app"};
+const __jsonld = {"@context":"https://schema.org","@type":"MusicGroup","name":"DISKO PANDA","genre":"Funk Disco","url":"https://disko.pintuweb.com"};
 
 export const metadata = {
-  metadataBase: new URL("https://linkinbio-disko.vercel.app"),
+  metadataBase: new URL("https://disko.pintuweb.com"),
   title: "DISKO PANDA — Dengarkan & Tonton",
   description: "Link in bio band funk-disco DISKO PANDA dari Bandung: single baru, jadwal manggung, dan merch resmi.",
   applicationName: "DISKO PANDA",
@@ -15,11 +15,11 @@ export const metadata = {
   authors: [{ name: "DISKO PANDA" }],
   creator: "DISKO PANDA",
   publisher: "DISKO PANDA",
-  alternates: { canonical: "https://linkinbio-disko.vercel.app" },
+  alternates: { canonical: "https://disko.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://linkinbio-disko.vercel.app",
+    url: "https://disko.pintuweb.com",
     siteName: "DISKO PANDA",
     title: "DISKO PANDA — Dengarkan & Tonton",
     description: "Link in bio band funk-disco DISKO PANDA dari Bandung: single baru, jadwal manggung, dan merch resmi.",
